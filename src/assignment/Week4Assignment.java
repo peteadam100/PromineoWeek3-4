@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class Week4Assignment {
 	public static void main(String[] args) throws IOException {
-		boolean pauses = true;
+		boolean pauses = false;
 		//1
 		//setup initial array
 		int[] ages = {3,9,23,64,2,8,28,93};
@@ -91,7 +91,8 @@ public class Week4Assignment {
 		
 		//9
 		System.out.println("9 \n ---Is the array greater than 100?" );
-		System.out.println("\tused the ages2 array for example: \t" + IsArrayGreaterThan100(ages2));
+		System.out.println("\tused the ages2 array for example: " + Arrays.toString(ages2) + "\tSum: " + SumIntArray(ages2));
+		System.out.println("\t" + IsArrayGreaterThan100(ages2));
 		if (pauses) {System.in.read();}
 		if (pauses) {System.in.read();}
 		
@@ -165,11 +166,7 @@ public class Week4Assignment {
 	}
 
 	private static boolean IsArrayGreaterThan100(int[] arr) {
-		int counter = 0;
-		for (int value : arr) {
-			counter += value;
-		}
-		if (counter > 100) {
+		if (SumIntArray(arr) > 100) {
 			return true;
 		} else {
 			return false;
